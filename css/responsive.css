@@ -1,0 +1,105 @@
+/* =========================================================
+   Responsive breakpoints
+   Mobile · Tablet · Laptop · Desktop · Ultrawide
+   ========================================================= */
+
+/* Ultrawide */
+@media (min-width: 1800px) {
+  :root { --container: 1440px; }
+  .hero-title { font-size: clamp(4rem, 6vw, 7rem); }
+}
+
+/* Laptop / small desktop */
+@media (max-width: 1200px) {
+  .projects-grid, .blog-grid, .cert-grid, .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .skills-grid { grid-template-columns: repeat(2, 1fr); }
+  .counters { grid-template-columns: repeat(2, 1fr); }
+  .featured { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 1100px) and (min-width: 961px) {
+  .nav-wrap { display: flex; }
+  .nav-links { position: fixed; inset: 74px auto auto 12px; left: 12px; width: calc(100vw - 24px); box-sizing: border-box; flex-direction: column; align-items: stretch; padding: 16px; background: rgba(6,8,16,.92); border: 1px solid var(--border); border-radius: 20px; backdrop-filter: blur(20px); gap: 4px; transform: translateY(-8px); opacity: 0; pointer-events: none; }
+  .nav-links.open { transform: none; opacity: 1; pointer-events: auto; }
+  .nav-links a { padding: 12px 14px; }
+  .hamburger { display: inline-flex; }
+}
+
+/* Tablet */
+@media (max-width: 960px) {
+  .nav-wrap { display: flex; }
+  .nav-wrap { margin-left: 12px; margin-right: 12px; padding: 8px 12px; }
+  .nav-links {
+    position: fixed; inset: 74px auto auto 12px; left: 12px;
+    right: auto; width: calc(100vw - 24px); box-sizing: border-box;
+    flex-direction: column; align-items: stretch; padding: 16px;
+    background: rgba(6,8,16,.92); border: 1px solid var(--border); border-radius: 20px;
+    backdrop-filter: blur(20px); gap: 4px;
+    transform: translateY(-8px); opacity: 0; pointer-events: none;
+    transition: transform .25s, opacity .25s;
+  }
+  .nav-links.open { transform: none; opacity: 1; pointer-events: auto; }
+  .nav-links a { padding: 12px 14px; }
+  .hamburger { display: inline-flex; }
+
+  .hero-wrap { grid-template-columns: 1fr; gap: 40px; min-height: auto; }
+  .hero-visual { min-height: 380px; }
+  .two-col { grid-template-columns: 1fr; gap: 40px; }
+  .about-list { grid-template-columns: repeat(2, 1fr); }
+
+  .section { padding: 80px 0; }
+  .footer-wrap { grid-template-columns: 1fr; text-align: center; gap: 20px; }
+  .footer .copy { text-align: center; }
+  .footer nav { justify-content: center; }
+  .section-head.between { flex-direction: column; align-items: flex-start; }
+
+  .admin[aria-hidden="false"] { grid-template-columns: minmax(150px, 28%) minmax(0, 1fr); }
+  .admin-side { margin: 8px; }
+  .admin-main { margin: 0 8px 8px; }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .container { padding: 0 18px; }
+  .hero-visual { width: 100%; overflow: hidden; }
+  .float-chips { max-width: 100%; overflow: hidden; }
+  .hero { padding-top: calc(var(--nav-h) + 40px); }
+  .hero-title { font-size: clamp(2.4rem, 10vw, 3.4rem); }
+  .hero-stats { grid-template-columns: repeat(2, 1fr); }
+  .hero-ctas .btn { flex: 1; justify-content: center; }
+  .projects-grid, .blog-grid, .cert-grid, .services-grid, .skills-grid, .counters { grid-template-columns: 1fr; }
+  .about-list { grid-template-columns: 1fr 1fr; }
+  .featured-grid { grid-template-columns: 1fr; }
+  .gallery { grid-template-columns: 1fr 1fr; }
+  .pin-inputs input { width: 46px; height: 54px; font-size: 1.3rem; }
+  .contact-form { padding: 20px; }
+  .admin-top { align-items: stretch; }
+  .admin-top h2 { width: 100%; }
+  .admin-actions .btn { min-width: 0; padding-left: 10px; padding-right: 10px; }
+  .admin-body .card { padding: 16px; }
+  .admin-nav { display: flex; flex-direction: column; }
+  .admin-nav button { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .admin[aria-hidden="false"] { grid-template-columns: 116px minmax(0, 1fr); display: grid; overflow: hidden; }
+  .admin-side { max-height: none; height: calc(100vh - 16px); margin: 8px 4px 8px 8px; padding: 12px 8px; }
+  .admin-main { height: calc(100vh - 16px); min-height: 0; margin: 8px 8px 8px 4px; }
+  .admin-brand { font-size: .82rem; gap: 5px; }
+  .admin-brand .logo-mark { width: 28px; height: 28px; font-size: .75rem; }
+  .admin-side > .input { padding: 9px 7px; font-size: .78rem; }
+  .float-chips .chip { font-size: .72rem; padding: 6px 10px; }
+  .admin[aria-hidden="false"] { display: grid; grid-template-columns: 116px minmax(0, 1fr); height: 100vh; overflow: hidden; }
+  .admin-side { height: calc(100vh - 16px); max-height: none; margin: 8px 4px 8px 8px; padding: 12px 8px; overflow-y: auto; }
+  .admin-main { height: calc(100vh - 16px); min-height: 0; margin: 8px 8px 8px 4px; }
+  .admin-top { align-items: flex-start; }
+  .admin-top h2 { width: 100%; }
+  .admin-actions { width: 100%; flex-wrap: wrap; }
+  .admin-actions .btn { min-width: 0; flex: 1 1 70px; padding-left: 8px; padding-right: 8px; }
+  .admin-side > .input { padding: 9px 7px; font-size: .76rem; }
+  .admin-brand { font-size: .8rem; gap: 5px; }
+  .admin-brand .logo-mark { width: 28px; height: 28px; font-size: .75rem; }
+}
+
+/* Touch */
+@media (hover: none) {
+  .tilt { transform: none !important; }
+}
+\n\n/* Additional all-device safeguards */\nhtml, body { max-width: 100%; overflow-x: hidden; }\nimg { max-width: 100%; }\n@media (max-width: 1100px) and (min-width: 961px) {\n  .nav-links a { padding: 7px 7px; font-size: .82rem; }\n  .nav-wrap { gap: 10px; }\n}\n@media (max-width: 960px) {\n  .nav-wrap { width: calc(100% - 24px); margin-left: auto; margin-right: auto; }\n  .nav-links { overflow-y: auto; max-height: calc(100vh - 100px); }\n  .admin[aria-hidden="false"] { display: flex; flex-direction: column; overflow: auto; }\n  .admin-side { margin: 10px; max-height: 42vh; }\n  .admin-main { margin: 0 10px 10px; min-height: 58vh; }\n  .admin-top { flex-wrap: wrap; gap: 10px; }\n}\n@media (max-width: 640px) {\n  .row { grid-template-columns: 1fr; }\n  .admin-side { max-height: 45vh; }\n  .admin-main { min-height: 55vh; }\n  .admin-actions { width: 100%; flex-wrap: wrap; }\n  .admin-actions .btn { flex: 1; }\n  .project-detail-content { gap: 22px; }\n}\n

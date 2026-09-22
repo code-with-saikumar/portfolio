@@ -1,0 +1,66 @@
+/* =========================================================
+   Animations & Interaction Effects
+   ========================================================= */
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
+@keyframes scrollLine {
+  0% { transform: scaleY(.2); transform-origin: top; }
+  50% { transform: scaleY(1); transform-origin: top; }
+  50.001% { transform: scaleY(1); transform-origin: bottom; }
+  100% { transform: scaleY(.2); transform-origin: bottom; }
+}
+
+@keyframes pulseRing {
+  0% { transform: scale(.9); opacity: .8; }
+  100% { transform: scale(1.2); opacity: 0; }
+}
+
+@keyframes logoSpinGlow {
+  0%, 100% { box-shadow: 0 8px 20px rgba(34,233,255,.35); }
+  50% { box-shadow: 0 8px 30px rgba(255,61,203,.5); }
+}
+
+@keyframes pop {
+  0% { transform: scale(.9); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes shake {
+  0%,100% { transform: translateX(0); }
+  20% { transform: translateX(-10px); }
+  40% { transform: translateX(10px); }
+  60% { transform: translateX(-8px); }
+  80% { transform: translateX(8px); }
+}
+
+@keyframes ripple {
+  0% { transform: translate(-50%,-50%) scale(0); opacity: .6; }
+  100% { transform: translate(-50%,-50%) scale(30); opacity: 0; }
+}
+
+/* =========================================================
+   Reveal on scroll
+   ========================================================= */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1); will-change: transform, opacity; }
+.reveal[data-reveal="fade-left"] { transform: translateX(-30px); }
+.reveal[data-reveal="fade-right"] { transform: translateX(30px); }
+.reveal[data-reveal="scale"] { transform: scale(.94); }
+.reveal[data-reveal="blur"] { filter: blur(10px); }
+.reveal[data-reveal="rotate"] { transform: rotate(-3deg) translateY(20px); }
+.reveal.in-view { opacity: 1; transform: none; filter: none; }
+
+/* Hero text stagger */
+.hero-title .line { opacity: 0; transform: translateY(20px); animation: heroLine .8s cubic-bezier(.2,.7,.2,1) forwards; }
+.hero-title .line:nth-child(1) { animation-delay: .2s; }
+.hero-title .line:nth-child(2) { animation-delay: .4s; }
+.hero-title .line:nth-child(3) { animation-delay: .6s; }
+@keyframes heroLine { to { opacity: 1; transform: none; } }
+
+/* Tilt cards get GPU hint */
+.tilt { transform-style: preserve-3d; will-change: transform; transition: transform .3s cubic-bezier(.2,.7,.2,1); }

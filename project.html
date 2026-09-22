@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+  <meta name="theme-color" content="#05060B"/>
+  <title>Project Case Study — Sai Kumar</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/animations.css"/>
+  <link rel="stylesheet" href="css/responsive.css"/>
+</head>
+<body>
+  <header class="nav" id="nav"><div class="nav-wrap project-nav-wrap">
+    <a href="index.html#home" class="nav-logo"><span class="logo-mark">SK</span><span class="logo-name">Sai Kumar</span></a>
+    <nav class="nav-links project-nav-links"><a href="index.html#projects">Projects</a><a href="index.html#contact">Contact</a></nav>
+  </div></header>
+  <main class="project-detail-page">
+    <div class="container" id="project-detail"></div>
+  </main>
+  <script src="js/storage.js"></script>
+  <script>
+  (function(){
+    const root=document.getElementById('project-detail');
+    const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    const data=window.Store.get();
+    const id=new URLSearchParams(location.search).get('id');
+    const p=data.projects?.[Number(id)];
+    if(!p){root.innerHTML='<section class="glass card project-not-found"><h1>Project not found</h1><a class="btn primary" href="index.html#projects">Back to projects</a></section>';return;}
+    const cs=p.caseStudy||{};
+    const image=p.image?`<img src="${esc(p.image)}" alt="${esc(p.title)}"/>`:'<div class="ph project-detail-placeholder">Project</div>';
+    root.innerHTML=`
+      <article class="project-detail glass">
+        <a class="back-link" href="index.html#projects">← Back to projects</a>
+        <div class="project-detail-hero">${image}</div>
+        <header class="project-detail-head">
+          <p class="section-kicker">Case Study</p>
+          <h1>${esc(p.title)}</h1>
+          ${p.duration?`<p class="project-detail-duration">Duration: ${esc(p.duration)}</p>`:''}
+          <p class="project-detail-description">${esc(p.fullDescription || p.desc)}</p>
+          <div class="project-tech">${(p.tech||[]).map(t=>`<span class="tag">${esc(t)}</span>`).join('')}</div>
+          <div class="project-detail-links">${p.github&&p.github!=='#'?`<a class="btn ghost" href="${esc(p.github)}" target="_blank" rel="noopener noreferrer">GitHub ↗</a>`:''}${p.live&&p.live!=='#'?`<a class="btn primary" href="${esc(p.live)}" target="_blank" rel="noopener noreferrer">Live Demo ↗</a>`:''}</div>
+        </header>
+        <div class="project-detail-content">
+          ${cs.overview?`<section><h2>Overview</h2><p>${esc(cs.overview)}</p></section>`:''}
+          ${cs.features?.length?`<section><h2>Key Features</h2><ul>${cs.features.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></section>`:''}
+          ${cs.role?`<section><h2>My Role</h2><p>${esc(cs.role)}</p></section>`:''}
+          ${cs.challenges?`<section><h2>Challenges</h2><p>${esc(cs.challenges)}</p></section>`:''}
+          ${cs.solution?`<section><h2>Solution</h2><p>${esc(cs.solution)}</p></section>`:''}
+          ${cs.results?`<section><h2>Results & Outcome</h2><p>${esc(cs.results)}</p></section>`:''}
+          <section><h2>Technology Stack</h2><div class="project-tech project-detail-tech">${(p.tech||[]).map(t=>`<span class="tag">${esc(t)}</span>`).join('')}</div></section>
+        </div>
+      </article>`;
+  })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#05060B" />
+
+    <title>Sai Kumar — Full Stack Developer & CSE Student</title>
+    <meta
+      name="description"
+      content="Final-year B.Tech Computer Science student and Full Stack Developer building modern, responsive web apps with React, Node.js, Java, and modern web tools. Projects, experience, blog and contact."
+    />
+    <meta
+      name="keywords"
+      content="Sai Kumar, Full Stack Developer, B.Tech CSE, Software Engineer, React, Node.js, JavaScript, Java, HTML, CSS, MongoDB, MySQL, Portfolio, Hyderabad"
+    />
+    <meta name="author" content="Sai Kumar" />
+    <link rel="canonical" href="https://porfolio-sai.lovable.app/portfolio.html" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="profile" />
+    <meta property="og:site_name" content="Sai Kumar — Portfolio" />
+    <meta property="og:title" content="Sai Kumar — Full Stack Developer & CSE Student" />
+    <meta
+      property="og:description"
+      content="Final-year B.Tech CSE student and Full Stack Developer. Building responsive web apps, solving real-world problems, and continuously learning modern technologies."
+    />
+    <meta property="og:url" content="https://porfolio-sai.lovable.app/portfolio.html" />
+    <meta property="profile:first_name" content="Sai" />
+    <meta property="profile:last_name" content="Kumar" />
+
+    <!-- Favicon (inline SVG data URI so no extra request) -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2322E9FF'/%3E%3Cstop offset='1' stop-color='%23FF3DCB'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='%23070812'/%3E%3Ctext x='50%25' y='58%25' text-anchor='middle' font-family='Space Grotesk,sans-serif' font-weight='700' font-size='34' fill='url(%23g)'%3ESK%3C/text%3E%3C/svg%3E"
+    />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Sora:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+
+    <!-- JSON-LD Person -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Sai Kumar",
+        "jobTitle": "Full Stack Developer",
+        "description": "Final-year B.Tech Computer Science student and Full Stack Developer building modern, responsive web applications with React, Node.js, Java and modern web tools.",
+        "url": "https://porfolio-sai.lovable.app/portfolio.html",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Hyderabad",
+          "addressCountry": "IN"
+        },
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "B.Tech Computer Science"
+        },
+        "knowsAbout": [
+          "Full Stack Development",
+          "Software Engineering",
+          "React",
+          "Node.js",
+          "JavaScript",
+          "Java",
+          "HTML",
+          "CSS",
+          "MongoDB",
+          "MySQL"
+        ],
+        "sameAs": []
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Backgrounds -->
+
+
+    <!-- Loading screen -->
+    <div class="loader" id="loader" role="status" aria-live="polite">
+      <div class="loader-inner">
+        <div class="loader-logo">
+          <span>SK</span>
+          <em class="pulse"></em>
+        </div>
+        <ul class="loader-steps" id="loader-steps">
+          <li>Initializing Portfolio...</li>
+          <li>Loading Assets...</li>
+          <li>Rendering Components...</li>
+          <li>Connecting Services...</li>
+          <li>Portfolio Ready ✓</li>
+        </ul>
+        <div class="loader-bar"><i></i></div>
+      </div>
+    </div>
+
+    <!-- Navbar -->
+    <header class="nav" id="nav">
+      <div class="nav-wrap">
+        <a href="#home" class="nav-logo" aria-label="Sai Kumar — Home">
+          <span class="logo-mark">SK</span>
+          <span class="logo-name" data-bind="site.name">Sai Kumar</span>
+        </a>
+
+        <nav class="nav-links" id="nav-links" aria-label="Primary">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#experience">Experience</a>
+          <a href="#education">Education</a>
+          <a href="#certificates">Certificates</a>
+          <a href="#achievements">Achievements</a>
+          <a href="#blog">Blog</a>
+          <a href="#contact">Contact</a>
+          <a href="#" id="resume-link" class="pill">Resume</a>
+        </nav>
+
+        <div class="nav-actions">
+          <button class="icon-btn" id="admin-open" aria-label="Open admin login" title="Admin">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg>
+          </button>
+          <button class="icon-btn hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- HERO -->
+      <section id="home" class="hero">
+        <div class="container hero-wrap">
+          <div class="hero-copy reveal" data-reveal="fade-up">
+            <p class="eyebrow"><span class="dot"></span> <span data-bind="hero.location">Hyderabad, India</span> · <span data-home-bind="availability">Available for work</span></p>
+            <h1 class="hero-title">
+              <span class="line" data-home-bind="greeting">Hi, I'm</span>
+              <span class="line grad" data-bind="hero.name">Sai Kumar</span>
+              <span class="line small"><span id="typing" class="typing"></span><span class="caret">|</span></span>
+            </h1>
+            <p class="hero-lede" data-bind="hero.tagline">
+              I'm a passionate B.Tech Computer Science student and Full Stack Developer who enjoys building modern, responsive, and user-focused web applications. I love solving real-world problems through clean code, continuously learning new technologies, and transforming ideas into meaningful digital experiences.
+            </p>
+            <div class="hero-ctas">
+              <a class="btn primary magnetic" id="cta-resume" href="#">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+                <span data-home-bind="resumeButton">Download Resume</span>
+              </a>
+              <a class="btn ghost magnetic" href="#projects">
+                <span data-home-bind="projectsButton">View Projects</span>
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 5 7 7-7 7"/></svg>
+              </a>
+              <a class="btn outline magnetic" href="#contact" data-home-bind="contactButton">Hire Me</a>
+            </div>
+
+            <ul class="hero-stats" data-home-list="heroStats">
+              <li><b data-counter="10">0</b><span>Projects</span></li>
+              <li><b data-counter="8">0</b><span>Certifications</span></li>
+              <li><b data-counter="300">0</b><span>DSA Solved</span></li>
+              <li><b>Final Yr</b><span>B.Tech CSE</span></li>
+            </ul>
+          </div>
+
+          <div class="hero-visual reveal" data-reveal="fade-left">
+            <div class="glass terminal tilt">
+              <header class="term-head">
+                <i></i><i></i><i></i>
+                <span data-home-bind="terminalTitle">~/sai-kumar/portfolio</span>
+              </header>
+              <pre class="term-body" data-home-bind="terminalContent"><span class="p">➜</span> <span class="k">whoami</span>
+<span class="v">sai · full-stack · ai enthusiast</span>
+
+<span class="p">➜</span> <span class="k">cat</span> stack.json
+{
+  "frontend": ["React", "Next.js", "TS"],
+  "backend":  ["Node", "Python", "Go"],
+  "cloud":    ["AWS", "GCP", "Docker"],
+  "ai":       ["OpenAI", "LangChain", "RAG"]
+}
+
+<span class="p">➜</span> <span class="k">npm</span> run build ✓ ready
+</pre>
+            </div>
+
+            <div class="float-chips" data-home-list="technologyChips" aria-hidden="true">
+              <span class="chip" style="--d:0s">⚛ React</span>
+              <span class="chip" style="--d:.6s">▲ Next.js</span>
+              <span class="chip" style="--d:1.2s">🐍 Python</span>
+              <span class="chip" style="--d:.3s">☁ AWS</span>
+              <span class="chip" style="--d:.9s">🤖 AI</span>
+              <span class="chip" style="--d:1.5s">🐳 Docker</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="scroll-hint" aria-hidden="true">
+          <span>Scroll</span>
+          <i></i>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about" class="section">
+        <div class="container two-col">
+          <div class="about-media reveal" data-reveal="fade-right">
+            <div class="glass photo tilt">
+              <div class="photo-inner" id="about-photo" aria-hidden="true">
+                <img src="assets/profile.jpeg" alt="Sai Kumar" loading="lazy" />
+              </div>
+              <div class="badge">Available</div>
+            </div>
+          </div>
+
+          <div class="about-copy reveal" data-reveal="fade-up">
+            <p class="section-kicker" data-home-bind="aboutKicker">About</p>
+            <h2 class="section-title" data-home-bind="aboutTitle">Final-year CSE student building real-world full-stack products.</h2>
+            <p class="lede" data-bind="about.bio">
+              I'm a final-year B.Tech Computer Science student with a strong passion for Full Stack Web Development and Software Engineering. I enjoy designing responsive user interfaces, developing scalable web applications, and exploring modern technologies that solve real-world challenges. Through academic projects, self-learning, and hands-on development, I have built practical experience in Java, JavaScript, HTML, CSS, React, Node.js, databases, and modern development tools. My goal is to begin my career as a Software Engineer where I can contribute to impactful projects, collaborate with talented teams, and continue growing as a developer.
+            </p>
+            <ul class="about-list" data-home-list="aboutHighlights">
+              <li><b>Final Yr</b><span>B.Tech CSE</span></li>
+              <li><b>10+</b><span>Projects</span></li>
+              <li><b>8+</b><span>Certifications</span></li>
+              <li><b>300+</b><span>DSA Problems</span></li>
+            </ul>
+            <p class="muted" data-home-bind="mission">Mission: build software that creates value, enhances user experiences, and solves real-world problems through clean, scalable, and maintainable code.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section id="skills" class="section">
+        <div class="container">
+          <header class="section-head reveal" data-reveal="fade-up">
+            <p class="section-kicker" data-home-bind="skillsKicker">Skills</p>
+            <h2 class="section-title" data-home-bind="skillsTitle">Tools I use to ship.</h2>
+          </header>
+          <div class="skills-grid" id="skills-grid"></div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects" class="section">
+        <div class="container">
+          <header class="section-head reveal" data-reveal="fade-up">
+            <p class="section-kicker" data-home-bind="projectsKicker">Work</p>
+            <h2 class="section-title" data-home-bind="projectsTitle">Selected projects.</h2>
+          </header>
+          <div class="projects-grid" id="projects-grid"></div>
+        </div>
+      </section>
+
+
+
+
+      <!-- EXPERIENCE -->
+      <section id="experience" class="section">
+        <div class="container">
+          <header class="section-head reveal" data-reveal="fade-up">
+            <p class="section-kicker" data-home-bind="experienceKicker">Experience</p>
+            <h2 class="section-title" data-home-bind="experienceTitle">Where I've built.</h2>
+          </header>
+          <ol class="timeline" id="experience-list"></ol>
+        </div>
+      </section>
+
+      <!-- EDUCATION -->
+      <section id="education" class="section">
+        <div class="container">
+          <header class="section-head reveal" data-reveal="fade-up">
+            <p class="section-kicker" data-home-bind="educationKicker">Education</p>
+            <h2 class="section-title" data-home-bind="educationTitle">Where I learned.</h2>
+          </header>
+          <ol class="timeline" id="education-list"></ol>
+        </div>
+      </section>
+
+      <!-- CERTIFICATES -->
+      <section id="certificates" class="section">
+        <div class="container">
+          <header class="section-head reveal" data-reveal="fade-up">
+            <p class="section-kicker" data-home-bind="certificatesKicker">Certificates</p>
+            <h2 class="section-title" data-home-bind="certificatesTitle">Verified learning.</h2>
+          </header>
+          <div class="cert-grid" id="cert-grid"></div>
+        </div>
+      </section>
+
+      <!-- ACHIEVEMENTS -->
+      <section id="achievements" class="section">
+        <div class="container">
+          <header class="section-head reveal" data-reveal="fade-up">
+            <p class="section-kicker" data-home-bind="achievementsKicker">Achievements</p>
+            <h2 class="section-title" data-home-bind="achievementsTitle">By the numbers.</h2>
+          </header>
+          <div class="counters" id="counters"></div>
+        </div>
+      </section>
+
+      <!-- BLOG -->
+      <section id="blog" class="section">
+        <div class="container">
+          <header class="section-head between reveal" data-reveal="fade-up">
+            <div>
+              <p class="section-kicker" data-home-bind="blogKicker">Blog</p>
+              <h2 class="section-title" data-home-bind="blogTitle">Notes & essays.</h2>
+            </div>
+            <div class="blog-tools">
+              <input id="blog-search" class="input" type="search" placeholder="Search articles..." aria-label="Search articles" />
+              <select id="blog-cat" class="input" aria-label="Filter category"></select>
+            </div>
+          </header>
+          <div class="blog-grid" id="blog-grid"></div>
+        </div>
+      </section>
+
+
+
+
+      <!-- CONTACT -->
+      <section id="contact" class="section">
+        <div class="container two-col contact-wrap">
+          <div class="reveal" data-reveal="fade-right">
+            <p class="section-kicker" data-home-bind="contactKicker">Contact</p>
+            <h2 class="section-title" data-home-bind="contactTitle">Let's build something great.</h2>
+            <ul class="contact-info">
+              <li><b>Email</b><a data-bind-href="contact.email" data-bind="contact.email">hello@saikumar.dev</a></li>
+              <li><b>Phone</b><a data-bind-href-tel="contact.phone" data-bind="contact.phone">+91 00000 00000</a></li>
+              <li><b>Location</b><span data-bind="contact.location">Hyderabad, India</span></li>
+            </ul>
+          </div>
+
+          <form class="glass contact-form reveal" data-reveal="fade-left" id="contact-form" novalidate>
+            <label><span>Name</span><input required name="name" class="input" type="text" placeholder="Your name" /></label>
+            <label><span>Email</span><input required name="email" class="input" type="email" placeholder="you@example.com" /></label>
+            <label><span>Subject</span><input name="subject" class="input" type="text" placeholder="What's this about?" /></label>
+            <label><span>Message</span><textarea required name="message" class="input" rows="5" placeholder="Tell me about your project..."></textarea></label>
+            <button class="btn primary magnetic" type="submit">
+              Send message
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 5 7 7-7 7"/></svg>
+            </button>
+            <p class="form-msg" id="form-msg" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- Social bar -->
+    <section class="social-bar" aria-label="Social links">
+      <div class="container">
+        <ul class="socials" id="socials"></ul>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container footer-wrap">
+        <div>
+          <a href="#home" class="nav-logo"><span class="logo-mark">SK</span><span class="logo-name" data-bind="site.name">Sai Kumar</span></a>
+          <p class="muted" data-bind="site.tagline">Building fast, elegant, intelligent products.</p>
+        </div>
+        <nav aria-label="Footer">
+          <a href="#about">About</a><a href="#projects">Projects</a><a href="#blog">Blog</a><a href="#contact">Contact</a>
+        </nav>
+        <p class="copy">© <span id="year"></span> <span data-bind="site.name">Sai Kumar</span>. All rights reserved.</p>
+      </div>
+      <button class="to-top magnetic" id="to-top" aria-label="Back to top">↑</button>
+    </footer>
+
+    <!-- Toast -->
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <!-- PIN Modal -->
+    <div class="modal" id="pin-modal" aria-hidden="true">
+      <div class="modal-backdrop" data-close></div>
+      <div class="modal-card glass" role="dialog" aria-modal="true" aria-labelledby="pin-title">
+        <button class="icon-btn close" data-close aria-label="Close">✕</button>
+        <h3 id="pin-title">Admin Access</h3>
+        <p class="muted">Enter admin PIN.</p>
+        <div class="pin-inputs" id="pin-inputs">
+          <input inputmode="numeric" maxlength="1" aria-label="PIN digit 1" />
+          <input inputmode="numeric" maxlength="1" aria-label="PIN digit 2" />
+          <input inputmode="numeric" maxlength="1" aria-label="PIN digit 3" />
+          <input inputmode="numeric" maxlength="1" aria-label="PIN digit 4" />
+        </div>
+        <p class="pin-err" id="pin-err" role="alert"></p>
+      </div>
+    </div>
+
+    <!-- Certificate Preview Modal -->
+    <div class="modal certificate-modal" id="certificate-modal" aria-hidden="true">
+      <div class="modal-backdrop" data-certificate-close></div>
+      <div class="modal-card glass certificate-modal-card" role="dialog" aria-modal="true" aria-labelledby="certificate-modal-title">
+        <button class="icon-btn close" data-certificate-close aria-label="Close">✕</button>
+        <div class="certificate-modal-media"><img id="certificate-modal-image" alt="Certificate" hidden /></div>
+        <h3 id="certificate-modal-title">Certificate</h3>
+        <p class="muted" id="certificate-modal-issuer"></p>
+        <a class="btn primary" id="certificate-modal-link" target="_blank" rel="noopener" hidden>View</a>
+      </div>
+    </div>
+
+    <div class="modal content-modal" id="project-modal" aria-hidden="true">
+      <div class="modal-backdrop" data-content-close></div>
+      <article class="modal-card glass content-modal-card" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
+        <button class="icon-btn close" type="button" data-content-close aria-label="Close project details">✕</button>
+        <div class="content-modal-media" id="project-modal-media"></div>
+        <p class="section-kicker">Case Study</p>
+        <h2 id="project-modal-title"></h2>
+        <p class="project-detail-duration" id="project-modal-duration"></p>
+        <p class="content-modal-description" id="project-modal-description"></p>
+        <div class="content-modal-sections" id="project-modal-sections"></div>
+        <div class="project-tech" id="project-modal-tech"></div>
+        <div class="project-detail-links" id="project-modal-links"></div>
+      </article>
+    </div>
+
+    <div class="modal content-modal" id="blog-modal" aria-hidden="true">
+      <div class="modal-backdrop" data-content-close></div>
+      <article class="modal-card glass content-modal-card" role="dialog" aria-modal="true" aria-labelledby="blog-modal-title">
+        <button class="icon-btn close" type="button" data-content-close aria-label="Close blog post">✕</button>
+        <div class="content-modal-media" id="blog-modal-media"></div>
+        <p class="blog-meta" id="blog-modal-meta"></p>
+        <h2 id="blog-modal-title"></h2>
+        <p class="content-modal-description" id="blog-modal-description"></p>
+      </article>
+    </div>
+
+    <!-- Admin Dashboard -->
+    <div class="admin" id="admin" aria-hidden="true">
+      <aside class="admin-side glass">
+        <div class="admin-brand"><span class="logo-mark">SK</span> Admin</div>
+        <input id="admin-search" class="input" placeholder="Search fields..." aria-label="Search fields" />
+        <nav class="admin-nav" id="admin-nav"></nav>
+        <div class="admin-tools">
+          <button class="btn ghost" id="admin-export">Export JSON</button>
+          <label class="btn ghost">
+            Import JSON
+            <input id="admin-import" type="file" accept="application/json" hidden />
+          </label>
+          <button class="btn ghost" id="admin-restore">Restore Default</button>
+          <button class="btn outline" id="admin-logout">Logout</button>
+        </div>
+      </aside>
+      <section class="admin-main">
+        <header class="admin-top glass">
+          <h2 id="admin-title">Dashboard</h2>
+          <div class="admin-actions">
+            <button class="btn ghost" id="admin-preview">Preview</button>
+            <button class="btn ghost" id="admin-cancel">Cancel</button>
+            <button class="btn primary" id="admin-save">Save</button>
+          </div>
+        </header>
+        <div class="admin-body" id="admin-body"></div>
+      </section>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/storage.js" defer></script>
+    <script src="js/projects.js" defer></script>
+    <script src="js/typing.js" defer></script>
+    <script src="js/animations.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/admin.js" defer></script>
+  </body>
+</html>
